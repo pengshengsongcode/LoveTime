@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "NSDate+HBCExts.h"
 
+#import "NSString+HBCExts.h"
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *label;
@@ -25,73 +27,20 @@
     
     NSDate *nowDate = [NSDate date];
     
-    NSString *nowDateString = [nowDate stringValue];
-    NSString *nowDateTimeString = [nowDate stringAPIValue_1];
+    NSDate *speciaDate = [specialDay defaultDate];
     
-    NSArray *nowDateArr = [nowDateString componentsSeparatedByString:@"-"];
-    NSArray *specialArr = [specialDay componentsSeparatedByString:@"-"];
-    NSArray *nowDateTimeArr = [nowDateTimeString componentsSeparatedByString:@":"];
+    NSInteger day = [nowDate dayIntervalWithDate:speciaDate];
     
-    NSString *year = @"";
-    NSString *Month = @"";
-    NSString *Day = @"";
-    NSString *HH =@"";
-    NSString *mm =@"";
-    NSString *ss =@"";
-    
-    
-    if (nowDateArr.count == 3 && specialArr.count == 3 && nowDateTimeArr.count == 3) {
-        
-        year = [NSString stringWithFormat:@"%ld年", [nowDateArr[0] integerValue] - [specialArr[0] integerValue]];
-        Month = [NSString stringWithFormat:@"%ld月", [nowDateArr[1] integerValue] - [specialArr[1] integerValue]];
-        Day = [NSString stringWithFormat:@"%ld天", [nowDateArr[2] integerValue] - [specialArr[2] integerValue]];
-        
-        HH = [NSString stringWithFormat:@"%ld小时", [nowDateTimeArr[0] integerValue]];
-        mm = [NSString stringWithFormat:@"%ld分钟", [nowDateTimeArr[1] integerValue]];
-        ss = [NSString stringWithFormat:@"%ld秒", [nowDateTimeArr[2] integerValue]];
-    }
-    
-    NSString *string = [NSString stringWithFormat:@"%@%@%@ %@%@%@", year, Month, Day, HH, mm, ss];
-    
+    NSString *string = [NSString stringWithFormat:@"在一起了%ld天啦~~~~~😊😊😊", day];
+
     NSMutableAttributedString *AttributedStr = [[NSMutableAttributedString alloc]initWithString:string];
-    
+
     [AttributedStr addAttribute:NSForegroundColorAttributeName
      
                           value:[UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1]
      
-                          range:[string rangeOfString:year]];
-    
-    [AttributedStr addAttribute:NSForegroundColorAttributeName
-     
-                          value:[UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1]
-     
-                          range:[string rangeOfString:Month]];
-    
-    [AttributedStr addAttribute:NSForegroundColorAttributeName
-     
-                          value:[UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1]
-     
-                          range:[string rangeOfString:Day]];
-    
-    [AttributedStr addAttribute:NSForegroundColorAttributeName
-     
-                          value:[UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1]
-     
-                          range:[string rangeOfString:HH]];
-    
-    [AttributedStr addAttribute:NSForegroundColorAttributeName
-     
-                          value:[UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1]
-     
-                          range:[string rangeOfString:mm]];
-    
-    [AttributedStr addAttribute:NSForegroundColorAttributeName
-     
-                          value:[UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1]
-     
-                          range:[string rangeOfString:ss]];
-    
-    
+                          range:[string rangeOfString:string]];
+
     [UIView animateWithDuration:0.2 animations:^{
         
         self.label.attributedText = AttributedStr;

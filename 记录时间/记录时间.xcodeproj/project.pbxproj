@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802AF3BA1FFF2E530069CEF1 /* NSString+HBCExts.m in Sources */ = {isa = PBXBuildFile; fileRef = 802AF3B91FFF2E520069CEF1 /* NSString+HBCExts.m */; };
 		80A35C3C1F57E85D005D369F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A35C3B1F57E85D005D369F /* main.m */; };
 		80A35C3F1F57E85D005D369F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A35C3E1F57E85D005D369F /* AppDelegate.m */; };
 		80A35C421F57E85D005D369F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A35C411F57E85D005D369F /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802AF3B81FFF2E520069CEF1 /* NSString+HBCExts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HBCExts.h"; sourceTree = "<group>"; };
+		802AF3B91FFF2E520069CEF1 /* NSString+HBCExts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HBCExts.m"; sourceTree = "<group>"; };
 		80A35C371F57E85D005D369F /* 记录时间.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "记录时间.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A35C3B1F57E85D005D369F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80A35C3D1F57E85D005D369F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 				80A35C3E1F57E85D005D369F /* AppDelegate.m */,
 				80A35C401F57E85D005D369F /* ViewController.h */,
 				80A35C411F57E85D005D369F /* ViewController.m */,
+				802AF3B81FFF2E520069CEF1 /* NSString+HBCExts.h */,
+				802AF3B91FFF2E520069CEF1 /* NSString+HBCExts.m */,
 				80A35C511F57E950005D369F /* NSDate+HBCExts.h */,
 				80A35C521F57E950005D369F /* NSDate+HBCExts.m */,
 				80A35C431F57E85D005D369F /* Main.storyboard */,
@@ -159,6 +164,7 @@
 				80A35C421F57E85D005D369F /* ViewController.m in Sources */,
 				80A35C3F1F57E85D005D369F /* AppDelegate.m in Sources */,
 				80A35C531F57E950005D369F /* NSDate+HBCExts.m in Sources */,
+				802AF3BA1FFF2E530069CEF1 /* NSString+HBCExts.m in Sources */,
 				80A35C3C1F57E85D005D369F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +326,7 @@
 				80A35C501F57E85D005D369F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
